@@ -1,122 +1,137 @@
-export const categories = [
-  "All Projects",
-  "Websites",
-  "Software",
-  "E-Commerce",
-  "Automation"
-];
+import React from 'react';
+import { motion } from 'framer-motion';
+import { ExternalLink, CheckCircle2, Globe, Layout, ShoppingBag, Bot, School, Database } from 'lucide-react';
 
-export const statistics = [
+const projects = [
   {
     id: 1,
-    value: 50,
-    suffix: "+",
-    label: "PROJECTS DELIVERED"
+    title: 'Premium Real Estate Website',
+    category: 'WEBSITE',
+    bgColor: 'bg-gradient-to-br from-cyan-400 to-blue-500',
+    icon: <Globe className="w-12 h-12 text-white/90" />,
+    description: 'High-performance real estate website with property listings, search filters, and lead capture system for a Dubai-based agency.',
+    techStack: ['React', 'Node.js', 'MongoDB', 'Express'],
+    metric: '300% Lead Increase',
   },
   {
     id: 2,
-    value: 98,
-    suffix: "%",
-    label: "CLIENT SATISFACTION"
+    title: 'CRM Dashboard Platform',
+    category: 'SOFTWARE',
+    bgColor: 'bg-gradient-to-br from-indigo-500 to-purple-600',
+    icon: <Layout className="w-12 h-12 text-white/90" />,
+    description: 'Custom CRM dashboard with lead tracking, analytics, and team collaboration features for B2B sales teams.',
+    techStack: ['React', 'Node.js', 'Express', 'Tailwind CSS'],
+    metric: '40% Retention Increase',
   },
   {
     id: 3,
-    value: 40,
-    suffix: "+",
-    label: "INDUSTRIES SERVED"
+    title: 'Auto-Inventory Management System',
+    category: 'E-COMMERCE',
+    bgColor: 'bg-gradient-to-br from-emerald-400 to-teal-600',
+    icon: <ShoppingBag className="w-12 h-12 text-white/90" />,
+    description: 'Automated inventory sync across Amazon, Shopify, and warehouse systems with real-time stock updates and alerts.',
+    techStack: ['React', 'Node.js', 'MongoDB', 'REST APIs'],
+    metric: '85% Error Reduction',
   },
   {
     id: 4,
-    prefix: "$",
-    value: 10,
-    suffix: "M+",
-    label: "CLIENT REVENUE GENERATED"
-  }
-];
-
-export const projects = [
-  {
-    id: 1,
-    title: "Premium Real Estate Website",
-    category: "Websites",
-    description: "High-performance real estate website with property listings, search filters, and lead capture system for a Dubai-based agency.",
-    technologies: ["React", "Tailwind", "Node.js"],
-    result: "300% Lead Increase",
-    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80",
-    gradient: "from-blue-600 via-blue-500 to-cyan-400",
-    gradientDark: "from-blue-700 to-cyan-500",
-    iconName: "Building2",
-    accentColor: "blue",
-    caseStudySummary: "Built an ultra-fast headless property discovery portal with interactive map-based neighborhood filtering and an automated CRM webhook lead router that tripled inbound qualified inquiries in 60 days."
-  },
-  {
-    id: 2,
-    title: "CRM Dashboard Platform",
-    category: "Software",
-    description: "Custom CRM dashboard with lead tracking, analytics, and team collaboration features for B2B sales teams.",
-    technologies: ["React", "Node.js", "MongoDB"],
-    result: "40% Retention Increase",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
-    gradient: "from-indigo-600 via-purple-600 to-indigo-500",
-    gradientDark: "from-indigo-700 to-purple-600",
-    iconName: "BarChart3",
-    accentColor: "purple",
-    caseStudySummary: "Designed a centralized workspace unifying multi-pipeline tracking, real-time KPI streaming, and activity automations, boosting team efficiency and increasing subscriber retention by 40%."
-  },
-  {
-    id: 3,
-    title: "Auto-Inventory Management System",
-    category: "E-Commerce",
-    description: "Automated inventory sync across Amazon, Shopify, and warehouse systems with real-time stock updates and alerts.",
-    technologies: ["React", "Node.js", "APIs"],
-    result: "85% Error Reduction",
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80",
-    gradient: "from-emerald-600 via-emerald-500 to-teal-500",
-    gradientDark: "from-emerald-700 to-teal-600",
-    iconName: "ShoppingCart",
-    accentColor: "emerald",
-    caseStudySummary: "Engineered real-time bidirectional syncing across Amazon FBA, Shopify Plus, and local warehouse 3PL systems, slashing overselling errors by 85%."
-  },
-  {
-    id: 4,
-    title: "Lead Mining & Enrichment Engine",
-    category: "Automation",
-    description: "Automated lead extraction from 8+ platforms with data validation, enrichment, and delivery to CRM systems.",
-    technologies: ["Python", "Data Mining", "APIs"],
-    result: "300% Lead Volume Increase",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80",
-    gradient: "from-orange-500 via-amber-500 to-yellow-500",
-    gradientDark: "from-orange-600 to-amber-500",
-    iconName: "Bot",
-    accentColor: "amber",
-    caseStudySummary: "Architected a multi-source web mining pipeline with automated verification, MX-record checking, and direct HubSpot pipeline synchronization."
+    title: 'Lead Mining & Enrichment Engine',
+    category: 'AUTOMATION',
+    bgColor: 'bg-gradient-to-br from-orange-400 to-amber-500',
+    icon: <Bot className="w-12 h-12 text-white/90" />,
+    description: 'Automated lead extraction from 8+ platforms with data validation, enrichment, and delivery to CRM systems.',
+    techStack: ['Node.js', 'Express', 'MongoDB', 'Web Scraping'],
+    metric: '300% Lead Volume Increase',
   },
   {
     id: 5,
-    title: "Multi-Vendor E-Commerce Platform",
-    category: "E-Commerce",
-    description: "Full-featured multi-vendor marketplace with vendor dashboard, payment splitting, and analytics.",
-    technologies: ["React", "Node.js", "MongoDB"],
-    result: "$500K+ Annual Revenue",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
-    gradient: "from-pink-600 via-rose-500 to-fuchsia-500",
-    gradientDark: "from-pink-700 to-rose-600",
-    iconName: "Store",
-    accentColor: "pink",
-    caseStudySummary: "Developed an enterprise multi-seller marketplace with automated Stripe Connect commission splitting, unified cart checkout, and sub-second catalog search."
+    title: 'Multi-Vendor E-Commerce Platform',
+    category: 'WEBSITE',
+    bgColor: 'bg-gradient-to-br from-pink-500 to-rose-500',
+    icon: <ShoppingBag className="w-12 h-12 text-white/90" />,
+    description: 'Full-featured multi-vendor marketplace with vendor dashboards, payment splitting, and analytics.',
+    techStack: ['React', 'Node.js', 'Express', 'MongoDB'],
+    metric: '$500k+ Annual Revenue',
   },
   {
     id: 6,
-    title: "School ERP Management System",
-    category: "Software",
-    description: "Complete school management system with student records, fee management, attendance, and report generation.",
-    technologies: ["React", "Node.js", "MongoDB"],
-    result: "80% Administrative Efficiency",
-    image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80",
-    gradient: "from-teal-600 via-teal-500 to-cyan-500",
-    gradientDark: "from-teal-700 to-cyan-600",
-    iconName: "GraduationCap",
-    accentColor: "teal",
-    caseStudySummary: "Streamlined K-12 institutional operations with biometric attendance sync, automated invoice / WhatsApp fee notifications, and instantaneous grade sheet reporting."
-  }
+    title: 'School ERP Management System',
+    category: 'SOFTWARE',
+    bgColor: 'bg-gradient-to-br from-teal-400 to-emerald-600',
+    icon: <School className="w-12 h-12 text-white/90" />,
+    description: 'Complete school management system with student records, fee management, attendance, and report generation.',
+    techStack: ['React', 'Node.js', 'Express', 'MongoDB'],
+    metric: '80% Administrative Efficiency',
+  },
 ];
+
+export default function PortfolioSection() {
+  return (
+    <section id="portfolio" className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50/50">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project, index) => (
+            <motion.div
+              key={project.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
+              className="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-xl shadow-slate-200/50 flex flex-col justify-between hover:shadow-2xl transition-all duration-300 group"
+            >
+              <div>
+                {/* Top Colored Card Area */}
+                <div className={`h-48 ${project.bgColor} p-6 relative flex flex-col justify-between items-center text-center`}>
+                  <div className="my-auto transform group-hover:scale-110 transition-transform duration-300">
+                    {project.icon}
+                  </div>
+                  <span className="self-start px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-white text-[10px] font-bold tracking-wider uppercase border border-white/20">
+                    {project.category}
+                  </span>
+                </div>
+
+                {/* Card Body */}
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">
+                    {project.title}
+                  </h3>
+                  <p className="text-slate-600 text-sm leading-relaxed mb-6">
+                    {project.description}
+                  </p>
+
+                  {/* Tech Stack Badges */}
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {project.techStack.map((tech, i) => (
+                      <span
+                        key={i}
+                        className="px-2.5 py-1 rounded-md bg-slate-100 text-slate-600 text-xs font-medium"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Card Footer Metric & Action */}
+              <div className="px-6 pb-6 pt-0">
+                <div className="flex items-center gap-1.5 text-emerald-600 font-semibold text-sm mb-4">
+                  <CheckCircle2 className="w-4 h-4 shrink-0" />
+                  <span>{project.metric}</span>
+                </div>
+
+                <a
+                  href="#"
+                  className="inline-flex items-center gap-1.5 text-blue-600 hover:text-blue-700 font-semibold text-sm group/link"
+                >
+                  View Case Study
+                  <ExternalLink className="w-4 h-4 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
+                </a>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
