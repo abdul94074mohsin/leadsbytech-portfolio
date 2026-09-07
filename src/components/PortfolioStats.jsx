@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion, useInView, useMotionValue, useSpring } from 'framer-motion';
-import { statistics } from '../data/projects.jsx';
+import { statistics } from '../data/projects.js';
 
 function Counter({ targetValue, prefix = '', suffix = '' }) {
   const ref = useRef(null);

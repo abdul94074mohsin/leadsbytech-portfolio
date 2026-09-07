@@ -1,6 +1,3 @@
-import React from 'react';
-import { Globe, Layout, ShoppingBag, Bot, School } from 'lucide-react';
-
 export const categories = [
   'All Projects',
   'WEBSITE',
@@ -18,7 +15,7 @@ export const projects = [
     techStack: ['React', 'Django', 'PostgreSQL'],
     metric: '300% Lead Increase',
     bgColor: 'bg-gradient-to-br from-cyan-500 to-blue-600',
-    icon: <Globe className="w-10 h-10 text-white" />
+    iconType: 'globe'
   },
   {
     id: 2,
@@ -28,7 +25,7 @@ export const projects = [
     techStack: ['Python', 'Django', 'React'],
     metric: '40% Retention Increase',
     bgColor: 'bg-gradient-to-br from-indigo-500 to-purple-600',
-    icon: <Layout className="w-10 h-10 text-white" />
+    iconType: 'layout'
   },
   {
     id: 3,
@@ -38,7 +35,7 @@ export const projects = [
     techStack: ['Python', 'Django', 'APIs'],
     metric: '85% Error Reduction',
     bgColor: 'bg-gradient-to-br from-emerald-500 to-teal-600',
-    icon: <ShoppingBag className="w-10 h-10 text-white" />
+    iconType: 'shopping'
   },
   {
     id: 4,
@@ -48,7 +45,7 @@ export const projects = [
     techStack: ['Python', 'Scraping', 'APIs'],
     metric: '300% Lead Volume Increase',
     bgColor: 'bg-gradient-to-br from-orange-500 to-amber-600',
-    icon: <Bot className="w-10 h-10 text-white" />
+    iconType: 'bot'
   },
   {
     id: 5,
@@ -58,7 +55,7 @@ export const projects = [
     techStack: ['React', 'Django', 'Stripe'],
     metric: '$500k+ Annual Revenue',
     bgColor: 'bg-gradient-to-br from-pink-500 to-rose-600',
-    icon: <ShoppingBag className="w-10 h-10 text-white" />
+    iconType: 'shopping'
   },
   {
     id: 6,
@@ -68,6 +65,6 @@ export const projects = [
     techStack: ['Python', 'Django', 'PostgreSQL'],
     metric: '80% Administrative Efficiency',
     bgColor: 'bg-gradient-to-br from-blue-600 to-indigo-700',
-    icon: <School className="w-10 h-10 text-white" />
+    iconType: 'school'
   },
 ];
