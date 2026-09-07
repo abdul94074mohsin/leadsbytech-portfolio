@@ -1,7 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { categories } from '../data/projects.jsx'; // Extention explicitly added here
 import { filtersVariants } from '../utils/animations';
+
+// Categories array explicitly defined inside this file
+const categories = [
+  'All Projects',
+  'WEBSITE',
+  'SOFTWARE',
+  'E-COMMERCE',
+  'AUTOMATION',
+];
 
 export default function ProjectFilters({ activeCategory, onSelectCategory }) {
   return (
