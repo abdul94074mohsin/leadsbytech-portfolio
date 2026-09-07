@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { categories } from '../data/projects';
+import { categories } from '../data/projects.jsx'; // Extention explicitly added here
 import { filtersVariants } from '../utils/animations';
 
 export default function ProjectFilters({ activeCategory, onSelectCategory }) {
@@ -12,7 +12,6 @@ export default function ProjectFilters({ activeCategory, onSelectCategory }) {
         animate="visible"
         className="w-full max-w-3xl mx-auto"
       >
-        {/* Mobile: flex-col (ek ke neeche ek) | Desktop: inline horizontal container */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-center gap-2 sm:gap-2 sm:p-1.5 sm:rounded-full sm:bg-white/80 sm:backdrop-blur-xl sm:border sm:border-white/90 sm:shadow-card-elevated w-full">
           {categories.map((category) => {
             const isActive = activeCategory === category;
