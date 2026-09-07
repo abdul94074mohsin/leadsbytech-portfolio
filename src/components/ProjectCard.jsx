@@ -1,20 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, CheckCircle2, Globe, Layout, ShoppingBag, Bot, School } from 'lucide-react';
+import { ExternalLink, CheckCircle2 } from 'lucide-react';
 import { cardItemVariants } from '../utils/animations';
-
-// Dynamic Icon Component
-const ProjectIcon = ({ iconType }) => {
-  const iconClass = "w-10 h-10 text-white";
-  switch (iconType) {
-    case 'globe': return <Globe className={iconClass} />;
-    case 'layout': return <Layout className={iconClass} />;
-    case 'shopping': return <ShoppingBag className={iconClass} />;
-    case 'bot': return <Bot className={iconClass} />;
-    case 'school': return <School className={iconClass} />;
-    default: return <Globe className={iconClass} />;
-  }
-};
 
 export default function ProjectCard({ project, index, onOpenCaseStudy }) {
   return (
@@ -28,12 +15,14 @@ export default function ProjectCard({ project, index, onOpenCaseStudy }) {
       className="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-xl shadow-slate-200/50 flex flex-col justify-between hover:shadow-2xl transition-all duration-300 group h-full"
     >
       <div>
-        {/* Card Header with Icon & Category */}
-        <div className={`h-48 ${project.bgColor} p-6 relative flex flex-col justify-between items-center text-center`}>
-          <div className="my-auto transform group-hover:scale-110 transition-transform duration-300">
-            <ProjectIcon iconType={project.iconType} />
-          </div>
-          <span className="self-start px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-white text-[10px] font-bold tracking-wider uppercase border border-white/20">
+        {/* Project Image Header */}
+        <div className="h-48 relative overflow-hidden bg-slate-100">
+          <img
+            src={project.image}
+            alt={project.title}
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          />
+          <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-slate-900/60 backdrop-blur-md text-white text-[10px] font-bold tracking-wider uppercase border border-white/20 z-10">
             {project.category}
           </span>
         </div>
