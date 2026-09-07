@@ -6,6 +6,13 @@ export const categories = [
   'AUTOMATION',
 ];
 
+export const statistics = [
+  { id: 1, value: '15+', label: 'Projects Completed' },
+  { id: 2, value: '99%', label: 'Client Satisfaction' },
+  { id: 3, value: '3+', label: 'Years Experience' },
+  { id: 4, value: '24/7', label: 'Support Available' },
+];
+
 export const projects = [
   {
     id: 1,
