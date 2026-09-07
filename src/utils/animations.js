@@ -147,3 +147,18 @@ export const floatingGlowVariants = {
     },
   },
 };
+
+// 7. Card Item Variant (Add this at the bottom)
+export const cardItemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: (i = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.4,
+      delay: i * 0.1,
+      ease: 'easeOut',
+    },
+  }),
+  exit: { opacity: 0, y: -20, transition: { duration: 0.2 } },
+};
