@@ -135,3 +135,11 @@ export default function PortfolioSection() {
     </section>
   );
 }
+
+export const categories = [
+  'All Projects',
+  'WEBSITE',
+  'SOFTWARE',
+  'E-COMMERCE',
+  'AUTOMATION',
+];
